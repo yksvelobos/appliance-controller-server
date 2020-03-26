@@ -25,13 +25,13 @@ public class ActionController {
         this.actionService = actionService;
     }
 
-    @RequestMapping(value = "getActions", method = RequestMethod.GET)
+    @RequestMapping(value = "/get-actions", method = RequestMethod.GET)
     @ResponseBody
     List<Action> getActions() {
         return actionService.findAllActions();
     }
 
-    @RequestMapping(value = "/upsertAction", method = RequestMethod.POST)
+    @RequestMapping(value = "/update-action", method = RequestMethod.POST)
     @ResponseBody
     Action upsertAction(@RequestBody Action action) {
         return actionService.save(action);

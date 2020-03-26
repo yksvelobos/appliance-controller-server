@@ -56,9 +56,11 @@ public class WorkProgram {
             this.id = workProgramEntity.getId();
             this.name = workProgramEntity.getName();
             this.deleteDate = workProgramEntity.getDeleteDate();
-            this.actions = workProgramEntity.getActions().stream()
+            this.actions = workProgramEntity.getActions() != null
+                ? workProgramEntity.getActions().stream()
                     .map(actionEntity -> Action.builder().from(actionEntity).build())
-                    .collect(Collectors.toSet());
+                    .collect(Collectors.toSet())
+                : null;
             return this;
         }
 

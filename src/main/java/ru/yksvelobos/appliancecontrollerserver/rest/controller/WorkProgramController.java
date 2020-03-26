@@ -24,20 +24,20 @@ public class WorkProgramController {
         this.workProgramService = workProgramService;
     }
 
-    @RequestMapping(value = "/addActionToProgram", method = RequestMethod.GET)
+    @RequestMapping(value = "/add-action-to-program", method = RequestMethod.GET)
     @ResponseBody
     WorkProgram addActionToProgram(@RequestParam(value = "programId") Long programId,
                                    @RequestParam(value = "actionId") Long actionId) {
         return workProgramService.addActionToProgram(programId, actionId);
     }
 
-    @RequestMapping(value = "/createWorkProgram", method = RequestMethod.POST)
+    @RequestMapping(value = "/create-work-program", method = RequestMethod.POST)
     @ResponseBody
     WorkProgram createWorkProgram(@RequestParam(value = "name", required = false) String name) {
         return workProgramService.createWorkProgram(name);
     }
 
-    @RequestMapping(value = "getWorkPrograms", method = RequestMethod.GET)
+    @RequestMapping(value = "get-work-wrograms", method = RequestMethod.GET)
     @ResponseBody
     List<WorkProgram> getWorkPrograms() {
         return workProgramService.findAll();

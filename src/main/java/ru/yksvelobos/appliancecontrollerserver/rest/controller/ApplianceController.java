@@ -22,37 +22,37 @@ public class ApplianceController {
         this.applianceService = applianceService;
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     Appliance registerAppliance(@RequestParam(value = "name", required = false) String name) {
         return applianceService.register(name);
     }
 
-    @RequestMapping(value = "/findById", method = RequestMethod.GET)
+    @RequestMapping(value = "/find-by-id", method = RequestMethod.GET)
     @ResponseBody
     Appliance findById(@RequestParam(value = "applianceId", required = false) Long applianceId) {
         return applianceService.findById(applianceId);
     }
 
-    @RequestMapping(value = "/findAll", method = RequestMethod.POST)
+    @RequestMapping(value = "/find-all", method = RequestMethod.POST)
     @ResponseBody
     List<Appliance> findAll() {
         return applianceService.findAll();
     }
 
-    @RequestMapping(value = "/startWorkProgram", method = RequestMethod.PUT)
+    @RequestMapping(value = "/start-work-program", method = RequestMethod.PUT)
     @ResponseBody
     void startWorkProgram(@RequestParam(value = "applianceId") Long applianceId) {
         applianceService.startWorkProgram(applianceId);
     }
 
-    @RequestMapping(value = "/stopWorkProgram", method = RequestMethod.PUT)
+    @RequestMapping(value = "/stop-work-program", method = RequestMethod.PUT)
     @ResponseBody
     void stopWorkProgram(@RequestParam(value = "applianceId") Long applianceId) {
         applianceService.stopWorkProgram(applianceId);
     }
 
-    @RequestMapping(value = "/addProgram", method = RequestMethod.POST)
+    @RequestMapping(value = "/add-program", method = RequestMethod.POST)
     @ResponseBody
     Appliance addProgram(@RequestParam(value = "applianceId") Long applianceId,
                          @RequestParam(value = "programId") Long programId) {

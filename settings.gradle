@@ -1,0 +1,4 @@
+rootProject.name = 'appliance-controller-server'
+include 'program-executor'
+findProject(':program-executor')?.name = 'programexecutor'
+
